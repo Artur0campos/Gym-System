@@ -1,0 +1,28 @@
+from datetime import datetime
+from Broker import Client_of_gym
+from Utils import User
+
+now = datetime.now()
+horario_atual = now.strftime("%H:%M")
+
+if __name__ == '__main__':
+
+    while True:
+        emmail = input("write your email:")
+        password = input("write your password")
+        emmail_confirm = input("confirm your email:")
+        password_confirm = input("confirm your password")
+        client = User(emmail, password)
+        request = client.comfirm_password(emmail_confirm, password_confirm)
+        if request:
+            break
+        elif not request:
+            pass
+
+    name = input("tell your name: ")
+    goal = input("what is your goal?:")
+    weight = input("your weight(kg): ")
+    high = input("your high: ")
+
+    person = Client_of_gym(name, goal, high, weight, horario_atual)
+    person.print_the_client_training('d')
