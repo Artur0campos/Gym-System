@@ -1,0 +1,44 @@
+class Client_of_gym:
+
+    def __init__(self, name, goal, high, weight, time_of_start):
+        self.__name = name
+        self.__goal = goal
+        self.__high = high
+        self.__weight = weight
+        self.__time_of_start = time_of_start
+
+    def training_a(self):
+        print("        costas e trapézio")
+
+    def training_b(self):
+        print("        peitorais e ombro")
+
+    def training_c(self):
+        print("        pernas completas")
+
+    def training_d(self):
+        print("        tríceps, bíceps e antebraços")
+
+    def print_the_client_training(self, training_a_b_c_d=str, ):
+        print(f"""
+        ---------GYM SHAPE FITNESS--------------
+
+        Name: {self.__name}
+        training(ABCD): {training_a_b_c_d}
+        Goal:{self.__goal}
+        high:{self.__high}(cm)
+        weight:{self.__weight}(kg)
+        Time of start:{self.__time_of_start}
+        ________________ GOOD WORK OUT ________________
+        """)
+        training_a_b_c_d = training_a_b_c_d.upper()
+        if training_a_b_c_d == "A":
+            return Client_of_gym.training_a(self)
+        elif training_a_b_c_d == "B":
+            return Client_of_gym.training_b(self)
+        elif training_a_b_c_d == "C":
+            return Client_of_gym.training_c(self)
+        elif training_a_b_c_d == "D":
+            return Client_of_gym.training_d(self)
+        else:
+            print("        ERROR - unidentified training")
