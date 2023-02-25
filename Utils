@@ -1,0 +1,19 @@
+class User:
+
+    id = 0000
+
+    def __init__(self, email, password):
+        self.__email = email
+        self.__pasword = password
+        User.id += 1
+
+    def comfirm_password(self, email_user, password_user):
+        if email_user == self.__email and password_user == self.__pasword:
+            print(f"allowed acess")
+            return True
+        elif self.__email and self.__pasword != email_user and password_user:
+            print(f"denied acess")
+            return False
+
+    def get_id(self):
+        return User.id
